@@ -1,0 +1,42 @@
+<div class="auth-container">
+  <p-card>
+    <ng-template pTemplate="header">
+      <span class="brand"><img class="logo" src="/img/logo.PNG" alt="Logo" /></span>
+    </ng-template>
+
+    <p-fluid>
+      <p-float-label class="field-spacing">
+        <input pInputText id="username" [(ngModel)]="username" autocomplete="username" />
+        <label for="username">Username</label>
+      </p-float-label>
+
+      <p-float-label class="field-spacing">
+        <input
+          type="password"
+          pInputText
+          id="password"
+          [(ngModel)]="password"
+          autocomplete="current-password"
+        />
+        <label for="password">Password</label>
+      </p-float-label>
+
+      <p-message *ngIf="error" severity="error" text="{{ error }}"></p-message>
+
+      <button
+        pButton
+        type="button"
+        class="field-spacing"
+        [disabled]="!username || !password"
+        (click)="login()"
+      >Login</button>
+
+      <button
+        pButton
+        type="button"
+        [disabled]="!username || !password"
+        (click)="register()"
+      >Register</button>
+    </p-fluid>
+  </p-card>
+</div>

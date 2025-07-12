@@ -1,0 +1,30 @@
+<div class="game-selection-container" (click)="onBackgroundClick()">
+  <p-card class="game-card" (click)="startGame(GameType.TTS_BOT)">
+    <img class="game-image" src="/games/bot.png" alt="Play vs Bot" />
+  </p-card>
+
+  <div class="flip-card" (click)="onMultiplayerClick($event)">
+    <div class="flip-card-inner" [class.flipped]="showMultiplayerOptions">
+      <div class="flip-card-front">
+        <p-card class="game-card">
+          <img class="game-image" src="/games/multiplayer.png" alt="Play vs Others" />
+        </p-card>
+      </div>
+      <div class="flip-card-back">
+        <p-card class="game-card back-card" (click)="$event.stopPropagation()">
+          <div class="option-buttons">
+            <button pButton [disabled]="!joinCode" (click)="joinGame()">Join Game</button>
+            <input
+              pInputText
+              type="text"
+              [(ngModel)]="joinCode"
+              placeholder="Enter game code"
+              class="join-input"
+            />
+            <button pButton (click)="startGame(GameType.TTS_RIVAL)">Create Game</button>
+          </div>
+        </p-card>
+      </div>
+    </div>
+  </div>
+</div>

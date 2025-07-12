@@ -1,0 +1,34 @@
+<div
+  class="card-wrapper"
+  [ngClass]="{
+       'selected-card': isSelected && !roundResult,
+       'disabled-card': disabled,
+       'flipped': isEffectivelyFlipped,
+       'winner-card': isWinner,
+       'loser-card': isLoser,
+       'draw-card': isDraw,
+       'hidden-during-reveal': shouldBeHidden
+     }"
+  (click)="choose()"
+>
+  <div class="card-inner">
+    <div class="card-face card-front">
+      <p-card class="choice-card">
+        <ng-template pTemplate="header">
+          <div class="card-header">{{ label }}</div>
+        </ng-template>
+        <ng-template pTemplate="content">
+          <img [src]="imagePath" class="choice-image" />
+        </ng-template>
+      </p-card>
+    </div>
+
+    <div class="card-face card-back">
+      <p-card class="choice-card back-style">
+        <ng-template pTemplate="content">
+          <i class="pi pi-eye-slash card-back-icon"></i>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</div>

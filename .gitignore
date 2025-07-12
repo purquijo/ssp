@@ -1,0 +1,69 @@
+# =========================
+# Root-level ignores
+# =========================
+.env
+.DS_Store
+Thumbs.db
+*.log
+
+# =========================
+# Docker volumes and temporary files
+# =========================
+**/pgdata/
+**/.docker/
+
+# =========================
+# Angular (ssp-frontend)
+# =========================
+ssp-frontend/node_modules/
+ssp-frontend/dist/
+ssp-frontend/.angular/
+ssp-frontend/.env
+
+# =========================
+# Backend - Spring Boot (ssp-backend)
+# =========================
+ssp-backend/target/
+ssp-backend/build/
+
+ssp-backend/.mvn/wrapper/maven-wrapper.jar
+
+# Preserve src main and test build/target folders if needed
+!ssp-backend/src/main/**/target/
+!ssp-backend/src/test/**/target/
+!ssp-backend/src/main/**/build/
+!ssp-backend/src/test/**/build/
+
+# Spring Tool Suite (STS)
+ssp-backend/.apt_generated
+ssp-backend/.classpath
+ssp-backend/.factorypath
+ssp-backend/.project
+ssp-backend/.settings
+ssp-backend/.springBeans
+ssp-backend/.sts4-cache
+
+# IntelliJ IDEA
+.idea
+ssp-backend/.idea/
+ssp-backend/*.iws
+ssp-backend/*.iml
+ssp-backend/*.ipr
+
+# NetBeans
+ssp-backend/nbproject/private/
+ssp-backend/nbbuild/
+ssp-backend/dist/
+ssp-backend/nbdist/
+ssp-backend/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# =========================
+# OS & Editor temp files
+# =========================
+*.swp
+*~
+*.bak
+*.tmp

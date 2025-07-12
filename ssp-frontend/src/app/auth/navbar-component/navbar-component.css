@@ -1,0 +1,79 @@
+:root {
+  --navbar-bg: #ffffff;
+  --navbar-text: #1f1f1f;
+  --navbar-border: #e0e0e0;
+}
+
+.app-dark {
+  --navbar-bg: #1c1c1c;
+  --navbar-text: #f5f5f5;
+  --navbar-border: #3a3a3a;
+}
+
+.custom-navbar {
+  background-color: var(--navbar-bg);
+  border-bottom: 1px solid var(--navbar-border);
+  padding: 0.75rem 1.5rem;
+  color: var(--navbar-text);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.user-info:hover {
+  background-color: rgba(100, 100, 100, 0.05);
+}
+
+.profile-pic {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  line-height: 1.2;
+}
+
+.username {
+  font-weight: 600;
+  color: var(--navbar-text);
+}
+
+.points {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: goldenrod;
+  font-weight: 500;
+}
+
+.dropdown-icon {
+  color: var(--navbar-text);
+  font-size: 0.85rem;
+  margin-left: 0.25rem;
+}
+
+.theme-toggle ::ng-deep .p-button {
+  border-radius: 9999px;
+}

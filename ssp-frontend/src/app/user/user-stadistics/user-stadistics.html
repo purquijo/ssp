@@ -1,0 +1,52 @@
+<div class="user-stats-container" *ngIf="stats">
+  <h2>User Statistics</h2>
+
+  <div class="stat-item">
+    <i class="pi pi-play-circle stat-icon"></i>
+    <div>
+      <h4>Games Played</h4>
+      <p>{{ stats.gamesPlayed }}</p>
+    </div>
+  </div>
+
+  <div class="stat-item">
+    <i class="pi pi-trophy stat-icon"></i>
+    <div>
+      <h4>Games Won</h4>
+      <p>{{ stats.gamesWon }}</p>
+    </div>
+  </div>
+
+  <div class="stat-item">
+    <i class="pi pi-percentage stat-icon"></i>
+    <div>
+      <h4>Win Rate</h4>
+      <p>{{ (stats.winRate * 100) | number: '1.0-2' }}%</p>
+    </div>
+  </div>
+
+  <div class="stat-item">
+    <i class="pi pi-star stat-icon"></i>
+    <div>
+      <h4>Most Used Choice</h4>
+      <img
+        *ngIf="stats.mostUsedChoice"
+        [src]="'/profile-pics/' + stats.mostUsedChoice.toLowerCase() + '.png'"
+        alt="Most Used Choice"
+        class="profile-pic"
+      />
+      <p *ngIf="!stats.mostUsedChoice">N/A</p>
+    </div>
+  </div>
+
+  <div class="menu-button-container">
+    <button
+      pButton
+      type="button"
+      icon="pi pi-home"
+      (click)="goToMenu()"
+    >
+      Go to Menu
+    </button>
+  </div>
+</div>

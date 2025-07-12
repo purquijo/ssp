@@ -1,0 +1,263 @@
+.game-container {
+  width: 100%;
+  height: 100%;
+}
+
+.vs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.player {
+  text-align: center;
+}
+
+.player-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.username {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.vs-icon {
+  text-align: center;
+  animation: pulse 1s infinite;
+  color: #f59e0b;
+}
+
+.vs-icon i {
+  font-size: 2rem;
+}
+
+.vs-text {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.choices-container {
+  margin-top: 20px;
+}
+
+.card-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.waiting-message {
+  margin-left: 0.5rem;
+  color: #888;
+  font-style: italic;
+  font-size: 0.9rem;
+  gap: 0.5rem;
+}
+
+.game-status {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.round-counter {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+.score {
+  font-size: 1rem;
+}
+
+.score-animate-player {
+  animation: bounceUp 0.6s ease;
+  color: #10b981;
+  font-weight: bold;
+}
+
+.score-animate-opponent {
+  animation: bounceUp 0.6s ease;
+  color: #aa1f03;
+  font-weight: bold;
+}
+
+.round-result {
+  text-align: center;
+  margin-top: 30px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.result-choice-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.choice.reveal {
+  padding: 10px 20px;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(0);
+  animation: popIn 0.5s forwards;
+}
+
+.choice.winner {
+  background-color: #d1fae5;
+  border: 2px solid #10b981;
+  font-weight: bold;
+}
+
+.winner-message {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  animation: fadeInUp 0.4s ease-in-out;
+}
+
+.game-over-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.game-over-content {
+  text-align: center;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+  transform: scale(0.9);
+  animation: popIn 0.5s 0.2s forwards;
+}
+
+.game-over-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.game-over-buttons-container {
+  display: flex;
+  gap: 8px;
+}
+
+.winner-icon {
+  font-size: 5rem;
+  color: #f59e0b;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+.looser-icon {
+  font-size: 5rem;
+  color: #aa1f03;
+  margin-bottom: 20px;
+}
+
+.exit-button-container {
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+}
+
+.waiting-container {
+  text-align: center;
+  padding: 2rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.waiting-message {
+  font-size: 1.2rem;
+  background-color: #f0f4ff;
+  border: 2px dashed #1976d2;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: inline-block;
+  color: #333;
+}
+
+@keyframes popIn {
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceUp {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

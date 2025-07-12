@@ -1,0 +1,19 @@
+@if (auth.isLoggedIn()) {
+<div class="custom-navbar">
+  <div class="navbar-content">
+    <p-menu #userMenu [model]="userMenuItems" popup></p-menu>
+    <div class="user-info" (click)="userMenu.toggle($event)">
+      <img
+        [src]="'/profile-pics/' + auth.getUser().avatar.toLowerCase() + '.png'"
+        alt="Profile"
+        class="profile-pic"
+      />
+      <div class="user-details">
+        <span class="username">{{ auth.getUser().username.toUpperCase() }}</span>
+        <span class="points"> <i class="pi pi-trophy"></i> {{ auth.getUser().points }} </span>
+      </div>
+      <i class="pi pi-angle-down dropdown-icon"></i>
+    </div>
+  </div>
+</div>
+}
